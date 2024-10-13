@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ini adalah deskripsi singkat tentang halaman web saya.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, belajar web development">
+    <meta name="author" content="Danish">
+    <title>Portofolio Danish</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Portofolio Danish</h1>
+    </header>
+    <audio id="myAudio">
+        <source src="cartel.mp3" type="audio/mpeg">
+    </audio>
+    <nav>
+        <ul>
+            <li><a href="https://www.youtube.com/@DanishLubis" target="_blank" id="homeLink">Beranda</a></li>
+            <li><a href="https://www.instagram.com/danishalfattah/" target="_blank" id="aboutLink">Tentang</a></li>
+            <li><a href="https://wa.me/+6285158570644" target="_blank" id="contactLink">Kontak</a></li>
+            <li><a href="#" id="darkModeToggle">Dark Mode</a></li>
+            <li>
+                <button id="audioButton" onclick="toggleSound()">Play</button>
+            </li>
+
+        </ul>
+    </nav>
+    <main>
+        <section id="dafar">
+            <img src="danishfarah.jpg" alt="profil">
+            <div class="text">
+                <h2>Farah Meytha Aisha</h2>
+                <p>dia cakep tp dah punyap pacar, pacarnya danish</p>
+                <a href="https://www.instagram.com/farahmeyth/" target="_blank" id="igLink">
+                    <img src="IG.png" alt="Instagram" class="ig-icon">
+                </a>
+            </div>
+        </section>
+        <section id="Mengg">
+            <img src="MENG.jpg" alt="mengku">
+            <div class="text">
+                <h2>Mengku</h2>
+                <p>dia adalah teman baikku, dia suka makan</p>
+                <a href="https://www.instagram.com/danishalfattah/" target="_blank" id="igLink">
+                    <img src="IG.png" alt="Instagram" class="ig-icon2">
+                </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Muhammad Danish Alfattah Lubis | 235150207111008.</p>
+    </footer>
+
+    <!-- Tambahkan JavaScript di sini -->
+    <script>
+
+        function toggleSound() {
+            audio = document.getElementById('myAudio');
+            button = document.getElementById('audioButton');
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause';
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        }
+
+         darkModeToggle = document.getElementById('darkModeToggle');
+         body = document.body;
+         header = document.querySelector('header');
+         footer = document.querySelector('footer');
+         main = document.querySelector('main');
+         links = document.querySelectorAll('nav ul li a');
+    
+        darkModeToggle.addEventListener('click', (event) => {
+            event.preventDefault(); // Mencegah reload halaman
+    
+            // Toggle kelas dark mode
+            body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode');
+            footer.classList.toggle('dark-mode');
+            main.classList.toggle('dark-mode');
+    
+            // Toggle dark mode untuk semua tautan
+            links.forEach(link => {
+                link.classList.toggle('dark-mode');
+            });
+    
+            // Ubah teks tautan dark mode
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                darkModeToggle.textContent = 'Dark Mode';
+            }
+
+            
+
+            
+        });
+    </script>
+    
+</body>
+</html>
